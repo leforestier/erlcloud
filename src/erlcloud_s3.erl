@@ -2057,6 +2057,8 @@ aws_region_from_host(Host) ->
         %% For example: s3.gra.perf.cloud.ovh.net
         ["s3", Value, _, _, _, _] ->
             Value;
+        ["cellar-fr-north-hds-c1", "services", "clever-cloud", "com"] ->
+            "ovh-hds";
         _ ->
             "us-east-1"
     end.
