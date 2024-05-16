@@ -2054,6 +2054,9 @@ aws_region_from_host(Host) ->
         [Value, _, _] ->
             %% Skip "s3-" prefix
             string:substr(Value, 4);
+        %% For example: s3.gra.perf.cloud.ovh.net
+        ["s3", Value, _, _, _, _] ->
+            Value;
         _ ->
             "us-east-1"
     end.
